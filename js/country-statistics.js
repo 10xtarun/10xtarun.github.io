@@ -45,7 +45,7 @@ fetchByCountry = () => {
             h6TR.className += "text-success card-text";
             //record data
             var p = createNode('p');
-            p.innerHTML = `Total Cases: ${data1.latest_stat_by_country[0].record_date}`;
+            p.innerHTML = `Last Updated at: ${data1.latest_stat_by_country[0].record_date}`;
             p.className += "text-default card-text";
             //append to the div
             appendNode(divCS, h6TC);
