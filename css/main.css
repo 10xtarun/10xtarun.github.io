@@ -10,3 +10,9 @@
 .world-map-container h4{
     padding: 0.1em;
 }
+/*visibility of world map*/
+@media screen and (max-width: 600px) {
+    .world-map-container{
+        display: none;
+    }
+  }
