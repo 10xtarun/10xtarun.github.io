@@ -15,4 +15,7 @@
     .world-map-container{
         display: none;
     }
+    .country-container{
+        margin-top: 1rem;
+    }
   }
