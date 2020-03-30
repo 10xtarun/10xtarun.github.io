@@ -1,0 +1,12 @@
+/*Styling world map conatainer*/
+.world-map-container{
+    margin: 0.1em;
+    margin-bottom: 0.5em;
+}
+#svgMapPopulation{
+    border: 1px solid blue;
+}
+
+.world-map-container h4{
+    padding: 0.1em;
+}

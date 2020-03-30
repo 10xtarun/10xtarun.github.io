@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corona Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/main.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <link href="assets/svgMap-master/dist/svgMap.css" rel="stylesheet">
+    <script src="assets/svgMap-master/dist/svgMap.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-light text-center fixed-top">
+            <h5 class="text-center text-default nav-items"><a href="index.html"><strong>Corona Data Website</strong></a></h5>
+            <ul class="nav">
+                <li class="nav-items"><h5><a href="about.html">About</a></h5></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <!--world map div-->
+            <div class="col-12 world-map-container">
+                <h4 class="text-center text-info">Corona Data On World Map</h4>
+                <div id="svgMapPopulation"></div>
+                <script src="assets/svgMap-master/data/coronaData.js"></script>
+                <script>
+                new svgMap({
+                    targetElementID: 'svgMapPopulation',
+                    data: svgMapDataCoronaData,
+                    flagType: 'image'
+                });  
+                </script> 
+            </div>
+            <div class="col-12 mt-2">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 p-1 border-right"> 
+                    <h6 class="text-default text-center btn-block border-bottom"><strong>Latest World Statistics</strong></h6>
+                    <div id="world-statistics" class="p-1"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 p-1">
+                    <h6 class="text-defult text-center btn-block border-bottom"><strong>Statistics By Country Name</strong></h6>
+                        <div class="card">
+                            <input id="input-country-name" placeholder="Enter Country Name..." name="countryName" >
+                            <button class="btn btn-default bg-light" onclick="fetchByCountry();">Search!</button>
+                        </div>
+
+                        <div class="mt-2 p-1" id="country-statistics"></div>
+                    </div>
+                </div>
+            </div>
+            </div> 
+        </div>
+
+    </div>
+    <hr/>
+    </main>
+    <footer class="footer text-center bg-light fixed-bottom border mt-1 p-1 border-top">
+        <h4 class="text-default">By <span class="text-info">Tarun Singh</span></h4>
+    </footer>
+    <script src="js/world-statistics.js"></script>
+    <script src="js/country-statistics.js"></script>
+    <script>
+        initialize = () => {
+            fetchWorldMap();
+            fetchWorldStats();
+        }
+        window.onload = initialize();
+    </script>
+</body>
+</html>
